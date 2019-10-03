@@ -7,6 +7,8 @@ module.exports = {
   password: process.env.DB_PASS,
   database: process.env.DB_NAME,
   storage: './__tests__/database.sqlite',
+  // removes db logs from yarn test
+  logging: !(process.env.NODE_ENV === 'test' && !process.env.LOG),
   define: {
     timestamps: true,
     underscored: true,
